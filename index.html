@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <script>
+const games = 5;
+let playerPoints = 0;
+let computerPoints = 0;
+
+        for(let i = 0; i < games; i++) {
+        let playerSelection = prompt("Rock, Paper or Scissors").toLowerCase();
+        
+        function computerPlay() {
+        return (["paper", "scissors", "rock"])[Math.random() * 3 | 0]; }
+        
+        let computerSelection = computerPlay();
+        let round = playRound(playerSelection, computerSelection);
+        
+        if(round === "wins") {
+            playerPoints++;
+            console.log("You Win! " + playerSelection + " beats " + computerSelection);
+        } else if(round === "loses") {
+            computerPoints++;
+            console.log("You Lose! " + computerSelection + " beats " + playerSelection);
+        } else if(round === "ties") {
+            console.log("It\'s a tie!");
+        }
+        }
+        if(playerPoints > computerPoints) {
+            console.log("");
+            console.log("You beat the computer " + playerPoints + " to " + computerPoints);
+            } else {
+                console.log("You lost to the computer " + computerPoints + " to " + playerPoints);
+            }
+        
+        function playRound(playerSelection, computerSelection) {
+            if (playerSelection == "rock") {
+                if (computerSelection == "scissors") {
+                return "wins";
+                } else if  
+                (computerSelection == "paper") {
+                return "loses";
+                } else {
+                return "ties";
+                }
+        }
+        
+             if (playerSelection == "paper") {
+                 if (computerSelection == "rock") {
+                 return "wins";
+                 } else if 
+                (computerSelection == "scissors") {
+                return "loses";
+                    } else {
+                    return "ties";
+                    }
+            }
+            if (playerSelection == "scissors") {
+                if (computerSelection == "paper") {
+                    return "wins";
+                } else if
+                (computerSelection == "rock") {
+                    return "loses";
+                } else {
+                    return "ties";
+                }
+            }
+        }
+    
+        
+    </script>
+</body>
+</html>
